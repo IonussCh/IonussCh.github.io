@@ -1,0 +1,44 @@
+body {
+    background: #f3f2ef;
+}
+#motto {
+    text-align: center;
+    color: green;
+a}
+
+#top-menu-bar {
+    text-align: center;
+    background-color: darkgray;
+    color: white;
+}
+
+#top-menu-bar li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: darkgoldenrod;
+}
+
+#top-menu-bar a {
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+    color: white;
+}
+
+#top-menu-bar a:visited { 
+    color: white;
+}
+#top-menu-bar a:hover{
+    color: darkblue;
+    background: white;
+
+.favorit {
+    color: rgb(7, 189, 196);
+    font-weight: bold;      
+    font-style: italic;
+}
+
+td {
+    padding:3px 10px;
+    color: blue;
+}
