@@ -1,5 +1,7 @@
 body {
     background: #f3f2ef;
+    width: 70%;
+    margin: 0 auto;
 }
 #motto {
     text-align: center;
