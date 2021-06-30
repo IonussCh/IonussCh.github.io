@@ -11,7 +11,7 @@ a}
 #top-menu-bar {
     text-align: center;
     background-color: darkgray;
-    color: white;
+    
 }
 
 #top-menu-bar li {
@@ -25,10 +25,21 @@ a}
     text-decoration: none;
     padding: 0 15px 0 15px;
     color: white;
+    margin: 2px 0;
+    border: 1px
 }
 
 #top-menu-bar a:visited { 
     color: white;
+}
+
+.page {
+    background: :white;
+    border: 1px solid =#e0dfdc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none
 }
 #top-menu-bar a:hover{
     color: darkblue;

@@ -3,30 +3,54 @@ function hidePage(id) {
     document.getElementById(id).style.display = 'none';
 }
 
+function highlightPage(el){
+    el.style.borderColor = '#00df00';
+  
+}
+
+function showPage(id) {
+    console.info('show page', id);
+    var page = document.getElementById(id);
+    if (page) {
+        page.style.display = 'block';
+    } else {
+        console.warn('pagina nu exista', id);
+    }
+}
+
+function hideAllPages() {
+    var pageIds = ['Projects', 'Skills', 'Languages', 'Home'
+];
+var i = 0;
+    
+    while(i < pageIds.length) {
+        console.info('i = ', i);
+        hidePage(pageIds[i++]);
+    }
+}
+
 function showHome(){
-    hidePage('Projects');
-    hidePage('Skills');
-    hidePage('Languages');
-    document.getElementById('Home').style.display = 'block';
+    hideAllPages()
+    showPage ('Home');
 }
 
 function showProjects() {
-    hidePage('Skills');
-    hidePage('Languages');
-    hidePage('Home');
-    document.getElementById('Projects').style.display = 'block';
+    hideAllPages();
+    showPage('Projects');
 }
 
 function showSkills() {
-    hidePage('Languages');
-    hidePage('Home');
-    hidePage('Projects');
-    document.getElementById('Skills').style.display = 'block';
+    hideAllPages();
+    showPage('Skills');
 }
 
 function showLanguages() {
-    hidePage('Skills');
-    hidePage('Home');
-    hidePage('Projects');
-    document.getElementById('Languages').style.display = 'block';
+    hideAllPages();
+    showPage('Languages');
 }
+
+function show(id) {
+    hideAllPages();
+    showPage(id);
+}
+showSkills();
