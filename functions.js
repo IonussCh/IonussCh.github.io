@@ -1,4 +1,4 @@
-function hidePage(id) {
+function hide(id) {
   document.getElementById(id).style.display = 'none';
 }
 
@@ -7,7 +7,7 @@ function highlight(el){
   
 }
 
-function showPage(id) {
+function show(id) {
     var page = document.getElementById(id);
     if (page) {
         page.style.display = 'block';
@@ -20,7 +20,7 @@ function showPage(id) {
 function hideAllPages() {
  var pages = Array.from(document.getElementsByClassName('page'));
     pages.forEach(function(page){
-        hidePage(page.id);
+        hide(page.id);
     });
 }
 
