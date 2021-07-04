@@ -21,12 +21,9 @@ function showPage(id) {
 function hideAllPages() {
     var pageIds = ['Projects', 'Skills', 'Languages', 'Home'
 ];
-var i = 0;
-    
-    while(i < pageIds.length) {
-        console.info('i = ', i);
-        hidePage(pageIds[i++]);
-    }
+ pageIds.forEach(function(pageId){
+     hidePage(pageId);
+ })
 }
 
 function showHome(){
