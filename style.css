@@ -6,7 +6,7 @@ body {
 #motto {
     text-align: center;
     color: green;
-a}
+}
 
 #top-menu-bar {
     text-align: center;
@@ -34,8 +34,8 @@ a}
 }
 
 .page {
-    background: :white;
-    border: 1px solid =#e0dfdc;
+    background: white;
+    border: 1px solid #e0dfdc;
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
@@ -46,6 +46,16 @@ a}
     color: darkblue;
     background: white;
 }    
+
+#skill li span {
+    font-weight: normal;
+    color: gray;
+    font-style: normal;
+    font-size: 0.8em;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 
 .favorit {
     color: rgb(7, 189, 196);
