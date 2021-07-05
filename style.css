@@ -41,9 +41,11 @@ a}
     margin-bottom: 10px;
     display: none
 }
-#top-menu-bar a:hover{
+#top-menu-bar a:hover,
+#top-menu-bar a.active {
     color: darkblue;
     background: white;
+}    
 
 .favorit {
     color: rgb(7, 189, 196);

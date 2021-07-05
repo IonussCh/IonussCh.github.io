@@ -1,5 +1,5 @@
 function hide(id) {
-  document.getElementById(id).style.display = 'none';
+    document.getElementById(id).style.display = 'none';
 }
 
 function highlight(el){
@@ -15,10 +15,17 @@ function show(id) {
     } else {
         console.warn('pagina nu exista', id);
     }
+    var oldLink = document.querySelector("a[data-page].active");
+    if (oldLink) {
+        oldLink.classList.remove("active");
+    }
+  
+    var link = document.querySelector(`a[data-page=${id}]`);
+    link.classList.add("active");
 }
 
 function hideAllPages() {
- var pages = Array.from(document.getElementsByClassName('page'));
+    var pages = Array.from(document.getElementsByClassName('page'));
     pages.forEach(function(page){
         hide(page.id);
     });
@@ -33,10 +40,10 @@ function showPage(id) {
 
  document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     
-     if (e.target.matches("a")) {
-        var id = e.target.getAtribute("data-page");
+    if (e.target.matches("a")) {
+        var id = e.target.getAttribute("data-page");
         showPage(id);
         highlight(e.target);
-     }
+    }
  })
     
