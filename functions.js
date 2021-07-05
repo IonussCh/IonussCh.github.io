@@ -30,3 +30,13 @@ function showPage(id) {
 }
 
  show('home');
+
+ document.querySelector('#top-menu-bar').addEventListener("click", function(e){
+    
+     if (e.target.matches("a")) {
+        var id = e.target.getAtribute("data-page");
+        showPage(id);
+        highlight(e.target);
+     }
+ })
+    
