@@ -45,11 +45,7 @@ document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     }
 })
 
-var skills = [
-    {name: "html", favorit: true, endorsements: 7},
-    {name: "js", favorit: true, endorsements: 10},
-    {name: "css"}
-];
+var skills = [];
 
 
 function showSkills(skills){
@@ -62,5 +58,9 @@ function showSkills(skills){
     document.querySelector("#skills ul").innerHTML = skillsHTML;
 }
 
-showSkills(skills);
-
+fetch("data/skills.json").then(function(response) {
+    return response.json();
+}).then(function(skills){
+    window.skills = skills;
+    showSkills(skills); 
+})
