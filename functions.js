@@ -8,24 +8,24 @@ function highlight(el){
 }
 
 function show(id) {
-    var page = document.getElementById(id);
+    const page = document.getElementById(id);
     if (page) {
         page.style.display = 'block';
         highlight(page);
     } else {
         console.warn('pagina nu exista', id);
     }
-    var oldLink = document.querySelector("a[data-page].active");
+    const oldLink = document.querySelector("a[data-page].active");
     if (oldLink) {
         oldLink.classList.remove("active");
     }
   
-    var link = document.querySelector(`a[data-page=${id}]`);
+    const link = document.querySelector(`a[data-page=${id}]`);
     link.classList.add("active");
 }
 
 function hideAllPages() {
-    var pages = Array.from(document.getElementsByClassName('page'));
+    const pages = Array.from(document.getElementsByClassName('page'));
     pages.forEach(function(page){
         hide(page.id);
     });
@@ -39,28 +39,56 @@ show('skills');
 
 document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     if (e.target.matches("a")) {
-        var id = e.target.getAttribute("data-page");
+        const id = e.target.getAttribute("data-page");
         showPage(id);
         highlight(e.target);
     }
 })
 
-var skills = [];
+window.skills = [];
 
 
 function showSkills(skills){
-    var skillsHTML = skills.map(function(skill){
-        var favorit = skill.favorit ? 'class="favorit"' : ''; 
-        var endorsements = skill.endorsements > 5 ? `<span>(${skill.endorsements})</span></li>` : '' ;
+    const skillsHTML = skills.map(function(skill){
+        const favorit = skill.favorit ? 'class="favorit"' : ''; 
+        const endorsements = skill.endorsements > 5 ? `<span>(${skill.endorsements})</span></li>` : '' ;
         return `<li ${favorit}>${skill.name} ${endorsements}</li>`;
     }).join('');
 
     document.querySelector("#skills ul").innerHTML = skillsHTML;
 }
 
+function sortSkillsByName(a, b)  {
+    const aName = a.name.toUppercase();
+        const aName = b.name.toUppercase();
+        if (aName < bName) {
+            return -1;
+        }
+        if (aName > bName) {
+            return 1;
+        }
+        return 0;
+} 
+
+function sortSkillsByEndorsements(a, b) {
+    return b.endorsements - a.endorsements;
+}
+
 fetch("data/skills.json").then(function(response) {
     return response.json();
 }).then(function(skills){
+    skills.sort(sortSkillsByName);
     window.skills = skills;
     showSkills(skills); 
 })
+
+
+
+
+function collectFirstName(employees) {
+ var firstNames = employees.map(function (e) {
+    return e.firstName
+    });
+    return firstNames;
+}
+ 
